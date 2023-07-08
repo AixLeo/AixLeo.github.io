@@ -18,11 +18,11 @@ plugins:
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML
 
-# theme:
-#     name: mkdocs
-#     shortcuts:
-#         help: 191    # ?
-#         next: 78     # n
-#         previous: 80 # p
-#         search: 83   # s
-#     custom_dir: custom/
+theme:
+    name: mkdocs
+    shortcuts:
+        help: 191    # ?
+        next: 78     # n
+        previous: 80 # p
+        search: 83   # s
+    # custom_dir: custom/
