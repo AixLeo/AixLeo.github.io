@@ -1,3 +1,7 @@
+time: 20230708
+pdfsource: https://link.springer.com/chapter/10.1007/3-540-47721-7_19
+short_title: SS_Homomorphisms
+# Secret Sharing Homomorphisms Keeping Shares of a Secret Secret
 ## Introduction
 
 文章[[Benaloh86]](#Benaloh86)介绍了Shamir门限方案的同态性质，提出了 $k$ -一致性的概念，进而提出了组合门限方案，并给出了应用：可验证秘密共享和电子投票。
