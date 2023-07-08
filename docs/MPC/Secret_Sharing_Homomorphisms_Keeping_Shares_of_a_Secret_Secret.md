@@ -16,11 +16,7 @@
 ## Introduction
 
 文章[[Benaloh86]](#Benaloh86)介绍了Shamir门限方案的同态性质，提出了 $k$ -一致性的概念，进而提出了组合门限方案，并给出了应用：可验证秘密共享和电子投票。
-<div style="text-align:center">
-<p><img src="res/2023-07-05-51.png" alt="111" width=80% /></p></div>
 
-
-<p><div style="text-align:center"><img src="res/2023-07-05-51.png" alt="111" width=80% /></div></p>
 
 ## The Homomorphism Property
 &emsp;&emsp;Shamir in [[SHA79]](#sha79) defines a $(k,n)$ *threshold scheme* to be a division of a secret $D$ into $n$ pieces $D_1, \cdots,D_n$, in such a way that:
@@ -28,7 +24,8 @@
 >2. knowledge of any $k-1$ or fewer $D_i$ pieces leaves $D$ completely undetermined (in the sense that all its possible values are equally likely).
 
 &emsp;&emsp;Shamir门限方案有两个条件，一是等于或多于$k$方的情况，一是少于$k$人的情况，满足同态性质，定义如下：
-![图1](https://aixleo.github.io/MPC/res/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png)
+<p><img src="res/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png" alt="111" width=90% /></p>
+
 
 &emsp;&emsp;需要注意的是，原始的Sharmir门限方案只满足 $(+,+)$ 同态。原因是 $d$ 个 $t-1$ 次多项式相加，仍是 $t-1$ 次，而 $d$ 个 $t-1$ 次多项式相乘，结果为 $d(t-1)$ 次。根据拉格朗日插值定理，至少需要 $d(t-1)+1$ 个份额才能恢复出秘密，可能会出现 $d(t-1)+1>n$ ，即拥有所有份额都无法恢复秘密的情况。
 > BGW协议[[BGW88]](#BGW88)中的加法运算，就是利用Shamir门限方案的加法同态实现秘密值和的安全多方计算。
@@ -43,7 +40,8 @@
 
 ## Composite threshold scheme
 ### Definition
-![图2](https://aixleo.github.io/MPC/res/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png)
+<p><img src="res/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png" alt="222" width=90% /></p>
+<!-- ![图2](https://aixleo.github.io/MPC/res/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png) -->
 
 &emsp;&emsp;组合门限方案的概念对Shamir门限方案的定义进行了修改。
 - 给定至少 $k$ 个super-shares $D_i$，即可轻易重构super-secret $D$。其中，super-secret $D$ 可以由sub-secret $d_i$ 执行 $\oplus$ 操作得到，而super-shares $D_i$ 可以由 sub-shares $d_ij$ 执行 $\otimes$ 得到。这里运用了上文提到的 $(\times,+)$-composite threshold scheme思想。
@@ -53,7 +51,8 @@
 - - $I=\{1,2,\cdots,n\}$代表参与人数，$D_i=X_i$ 表示给定super-shares的取值空间；
 - - $I'$ 是维度为 $k-1$ 的 $I$ 子集，即 $k-1$ 个参与者，$d_{ij}=x_{ij}$ 表示给定sub-secret $d_j$ 的任意 $k-1$ 个sub-shares。（Note that: 每一个sub-secret $d_j$ 及构成它的sub-shares $d_{ij}$ 单独拎出来都是一个Shamir门限方案，因此，同样满足 $k-1$ 个份额无法恢复出秘密的性质。）
 - 综上所述，在给定上述知识后，敌手猜测 $d_j=x_j$ 的概率和只给定秘密取值空间时的概率相等（即在给定super-secret $D$，super-shares $D_i$ 以及 $k-1$ 个sub-shares $d_{i,j}$ 时，敌手无法获得额外知识）。
-![tu3](https://aixleo.github.io/MPC/res/20230707.jpg)
+
+<p><img src="res/20230707.jpg" alt="333" width=80% /></p>
 
 > **Theorem 1** If the secret domain $S$ and the share domain $T$ are finite and of the same cardinality, then every $(\oplus,\otimes)$-homomorphic $(k,n)$ threshold scheme is a $(\oplus,\otimes)$ -composite $(k,n)$ threshold scheme.
 
