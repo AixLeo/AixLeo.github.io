@@ -33,7 +33,7 @@ Papers are now sorted in Several categories
 
 ## Github
 
-[Github 网页](https://github.com/Owen-Liuyuxuan/papers_reading_sharing.github.io)
+[Github 网页](https://aixleo.github.io)
 
 欢迎共同记录论文阅读,对文章的解读有质疑和补充的建议提交github issue.
 
