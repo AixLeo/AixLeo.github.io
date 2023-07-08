@@ -9,7 +9,7 @@
 
 &emsp;&emsp;Shamir门限方案有两个条件，一是等于或多于$k$方的情况，一是少于$k$人的情况，满足同态性质，定义如下：
 <div style="text-align: center;">
-<img src="images/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png" alt="图1" style=max-width:90%;></div>
+<img src="images\b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png" alt="图1" style=max-width:90%;></div>
 
 &emsp;&emsp;需要注意的是，原始的Sharmir门限方案只满足 $(+,+)$ 同态。原因是 $d$ 个 $t-1$ 次多项式相加，仍是 $t-1$ 次，而 $d$ 个 $t-1$ 次多项式相乘，结果为 $d(t-1)$ 次。根据拉格朗日插值定理，至少需要 $d(t-1)+1$ 个份额才能恢复出秘密，可能会出现 $d(t-1)+1>n$ ，即拥有所有份额都无法恢复秘密的情况。
 > BGW协议[[BGW88]](#BGW88)中的加法运算，就是利用Shamir门限方案的加法同态实现秘密值和的安全多方计算。
@@ -25,7 +25,7 @@
 ## Composite threshold scheme
 ### Definition
 <div style="text-align: center;">
-<img src="images/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png" alt="图2" style=max-width:90%;></div>
+<img src="images\bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png" alt="图2" style=max-width:90%;></div>
 
 &emsp;&emsp;组合门限方案的概念对Shamir门限方案的定义进行了修改。
 - 给定至少 $k$ 个super-shares $D_i$，即可轻易重构super-secret $D$。其中，super-secret $D$ 可以由sub-secret $d_i$ 执行 $\oplus$ 操作得到，而super-shares $D_i$ 可以由 sub-shares $d_ij$ 执行 $\otimes$ 得到。这里运用了上文提到的 $(\times,+)$-composite threshold scheme思想。
@@ -36,7 +36,7 @@
 - - $I'$ 是维度为 $k-1$ 的 $I$ 子集，即 $k-1$ 个参与者，$d_{ij}=x_{ij}$ 表示给定sub-secret $d_j$ 的任意 $k-1$ 个sub-shares。（Note that: 每一个sub-secret $d_j$ 及构成它的sub-shares $d_{ij}$ 单独拎出来都是一个Shamir门限方案，因此，同样满足 $k-1$ 个份额无法恢复出秘密的性质。）
 - 综上所述，在给定上述知识后，敌手猜测 $d_j=x_j$ 的概率和只给定秘密取值空间时的概率相等（即在给定super-secret $D$，super-shares $D_i$ 以及 $k-1$ 个sub-shares $d_{i,j}$ 时，敌手无法获得额外知识）。
 <div style="text-align: center;">
-<img src="images/20230707.jpg" alt="图copmsite" style=max-width:90%;></div>
+<img src="images\20230707.jpg" alt="图copmsite" style=max-width:90%;></div>
 
 > **Theorem 1** If the secret domain $S$ and the share domain $T$ are finite and of the same cardinality, then every $(\oplus,\otimes)$-homomorphic $(k,n)$ threshold scheme is a $(\oplus,\otimes)$ -composite $(k,n)$ threshold scheme.
 
@@ -55,7 +55,7 @@
 
 ## VSS思路
 <div style="text-align: center;">
-<img src="images/2ee2c082d5966d18f232db178fab9d547f4487399c0f87cc080788b770b913dc.png" alt="图3" style=max-width:90%;></div>
+<img src="images\2ee2c082d5966d18f232db178fab9d547f4487399c0f87cc080788b770b913dc.png" alt="图3" style=max-width:90%;></div>
 
 图中主要思路是一种交互式的协议，prover加密了 $n$ 个（假设100个）多项式发送给verifier，verifier从中**随机选择**50个验证多项式的度（假设这些多项式的度都至多为 $d$，那有理由相信剩下的50个多项式的度也为 $d$）。思路用了 $k$ 一致性的定义，即由 $n$ 个不同点处的值给出的多项式 $P$ 的degree至多为 $d$，则表示是同一个秘密所生成的多项式，自然也就恢复出同一个秘密。
 
