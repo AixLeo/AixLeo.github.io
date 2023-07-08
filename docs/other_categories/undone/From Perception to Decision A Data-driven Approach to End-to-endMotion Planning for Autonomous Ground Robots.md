@@ -1,1 +1,0 @@
-# From Perception to Decision: A Data-driven Approach to End-to-end Motion Planning for Autonomous Ground Robots

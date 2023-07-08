@@ -1,1 +1,0 @@
-# LP-3DCNN: Unveiling Local Phase in 3D Convolutional Neural Networks

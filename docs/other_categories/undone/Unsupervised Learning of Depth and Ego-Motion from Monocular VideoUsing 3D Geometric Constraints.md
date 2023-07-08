@@ -1,1 +1,0 @@
-# Unsupervised Learning of Depth and Ego-Motion from Monocular VideoUsing 3D Geometric Constraints

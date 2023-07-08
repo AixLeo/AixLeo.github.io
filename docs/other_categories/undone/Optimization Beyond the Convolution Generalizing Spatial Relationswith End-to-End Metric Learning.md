@@ -1,1 +1,0 @@
-# Optimization Beyond the Convolution: Generalizing Spatial Relationswith End-to-End Metric Learning

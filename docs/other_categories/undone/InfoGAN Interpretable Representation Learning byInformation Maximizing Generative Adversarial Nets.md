@@ -1,1 +1,0 @@
-# InfoGAN: Interpretable Representation Learning byInformation Maximizing Generative Adversarial Nets

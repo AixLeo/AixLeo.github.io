@@ -1,1 +1,0 @@
-# Autonomous  Racing  using  Learning  Model  Predictive  Control

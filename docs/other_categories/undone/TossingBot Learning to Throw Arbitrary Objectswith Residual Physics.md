@@ -1,1 +1,0 @@
-# TossingBot: Learning to Throw Arbitrary Objectswith Residual Physics
