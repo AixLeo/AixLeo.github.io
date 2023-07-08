@@ -52,7 +52,7 @@
 - - $I'$ 是维度为 $k-1$ 的 $I$ 子集，即 $k-1$ 个参与者，$d_{ij}=x_{ij}$ 表示给定sub-secret $d_j$ 的任意 $k-1$ 个sub-shares。（Note that: 每一个sub-secret $d_j$ 及构成它的sub-shares $d_{ij}$ 单独拎出来都是一个Shamir门限方案，因此，同样满足 $k-1$ 个份额无法恢复出秘密的性质。）
 - 综上所述，在给定上述知识后，敌手猜测 $d_j=x_j$ 的概率和只给定秘密取值空间时的概率相等（即在给定super-secret $D$，super-shares $D_i$ 以及 $k-1$ 个sub-shares $d_{i,j}$ 时，敌手无法获得额外知识）。
 
-<img src="res/20230707.jpg" alt="333" width=80%/>
+\<img src="res/20230707.jpg" alt="333" width=80%/\>
 
 > **Theorem 1** If the secret domain $S$ and the share domain $T$ are finite and of the same cardinality, then every $(\oplus,\otimes)$-homomorphic $(k,n)$ threshold scheme is a $(\oplus,\otimes)$ -composite $(k,n)$ threshold scheme.
 
@@ -70,7 +70,7 @@
 &emsp;**Note that:** Shamir's scheme, the shares $s_1,s_2,\cdots,s_n$ are $k$ - *consistent* **if and only if** the interpolation of the points $(1,s_l),(2,s_2),\cdots,(n,s_n)$ yields a polynomial of degree at most $d = k - 1$. It is also useful to observe that if the sum of two polynomials is of degree at most $d$, then either both are of degree at most $d$ or both are of degree greater than $d$.
 
 ## VSS思路
-![tu4](https://aixleo.github.io/MPC/res/2ee2c082d5966d18f232db178fab9d547f4487399c0f87cc080788b770b913dc.png)
+![tu4](res/2ee2c082d5966d18f232db178fab9d547f4487399c0f87cc080788b770b913dc.png)
 
 图中主要思路是一种交互式的协议，prover加密了 $n$ 个（假设100个）多项式发送给verifier，verifier从中**随机选择**50个验证多项式的度（假设这些多项式的度都至多为 $d$，那有理由相信剩下的50个多项式的度也为 $d$）。思路用了 $k$ 一致性的定义，即由 $n$ 个不同点处的值给出的多项式 $P$ 的degree至多为 $d$，则表示是同一个秘密所生成的多项式，自然也就恢复出同一个秘密。
 
