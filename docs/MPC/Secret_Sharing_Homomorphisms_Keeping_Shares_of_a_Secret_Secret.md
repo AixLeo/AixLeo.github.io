@@ -52,7 +52,7 @@
 - - $I'$ 是维度为 $k-1$ 的 $I$ 子集，即 $k-1$ 个参与者，$d_{ij}=x_{ij}$ 表示给定sub-secret $d_j$ 的任意 $k-1$ 个sub-shares。（Note that: 每一个sub-secret $d_j$ 及构成它的sub-shares $d_{ij}$ 单独拎出来都是一个Shamir门限方案，因此，同样满足 $k-1$ 个份额无法恢复出秘密的性质。）
 - 综上所述，在给定上述知识后，敌手猜测 $d_j=x_j$ 的概率和只给定秘密取值空间时的概率相等（即在给定super-secret $D$，super-shares $D_i$ 以及 $k-1$ 个sub-shares $d_{i,j}$ 时，敌手无法获得额外知识）。
 
-<p><img src="res/20230707.jpg" alt="333" width=80% /></p>
+<img src="res/20230707.jpg" alt="333" width=80%/>
 
 > **Theorem 1** If the secret domain $S$ and the share domain $T$ are finite and of the same cardinality, then every $(\oplus,\otimes)$-homomorphic $(k,n)$ threshold scheme is a $(\oplus,\otimes)$ -composite $(k,n)$ threshold scheme.
 
