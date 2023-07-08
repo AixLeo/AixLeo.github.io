@@ -16,11 +16,7 @@
 ## Introduction
 
 文章[[Benaloh86]](#Benaloh86)介绍了Shamir门限方案的同态性质，提出了 $k$ -一致性的概念，进而提出了组合门限方案，并给出了应用：可验证秘密共享和电子投票。
-
-
-<img src="https://aixleo.github.io/MPC/res/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png" width = 80% alt="图1" />
-
-![111](res/2023-07-05-51.png)
+<p><img src="res/2023-07-05-51.png" alt="111" /></p>
 
 ## The Homomorphism Property
 &emsp;&emsp;Shamir in [[SHA79]](#sha79) defines a $(k,n)$ *threshold scheme* to be a division of a secret $D$ into $n$ pieces $D_1, \cdots,D_n$, in such a way that:
