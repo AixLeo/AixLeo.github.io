@@ -1,5 +1,5 @@
 time: 20230708
-pdfsource: https://link.springer.com/chapter/10.1007/3-540-47721-7_19
+pdf_source: https://link.springer.com/chapter/10.1007/3-540-47721-7_19
 short_title: SS_Homomorphisms
 # Secret Sharing Homomorphisms Keeping Shares of a Secret Secret
 ## Introduction
@@ -19,9 +19,9 @@ short_title: SS_Homomorphisms
 > BGW协议[[BGW88]](#BGW88)中的加法运算，就是利用Shamir门限方案的加法同态实现秘密值和的安全多方计算。
 
 &emsp;&emsp;但是通过离散对数，可以将其构造成 $(\times,+)$-*composite threshold scheme*. By using a homomorphism between addition and discrete logarithms, for example, it is possible to transform Shamir’s scheme into a $(\times,+)$-*composite (k,n) threshold scheme*.即：***The sum of the shares of the discrete logs of the secrets are shares of the discrete log of the product of the secrets.***
-> $$f(x)=\log_as+\sum_{i=1}^{t-1}a_ix_i$$
-> $$f'(x)=\log_as'+\sum_{i=1}^{t-1}a_i'x_i$$
-> $$f(x)+f'(x)=\log_a{s\cdot s'}+\sum_{i=1}^{t-1}(a_i+a_i')x_i$$
+> $f(x)=\log_as+\sum_{i=1}^{t-1}a_ix_i$
+> $f'(x)=\log_as'+\sum_{i=1}^{t-1}a_i'x_i$
+> $f(x)+f'(x)=\log_a{s\cdot s'}+\sum_{i=1}^{t-1}(a_i+a_i')x_i$
 
 文章所提思路中，为了降低计算复杂度，选取了较小的模数 $p$，也就限制了共享秘密的乘积必须小于模数 $p$。文献[[史明杰2016]](#shi2016)中采用了易计算离散对数设计实现了乘法同态性。
 <!-- <div STYLE="page-break-after: always;"></div> -->
