@@ -1,6 +1,17 @@
-time: 20230708
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
 pdf_source: https://link.springer.com/chapter/10.1007/3-540-47721-7_19
-short_title: SS_Homomorphisms
+
 # Secret Sharing Homomorphisms Keeping Shares of a Secret Secret
 ## Introduction
 
