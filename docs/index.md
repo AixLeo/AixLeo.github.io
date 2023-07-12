@@ -11,6 +11,8 @@
 
 ### [Secret Sharing Homomorphisms Keeping Shares of a Secret Secret](MPC/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret.md)
 
+### [Summarize of ZJU Crypto School](MPC/Summarize_of_ZJU_Crypto_School.html)
+
 
 
 
