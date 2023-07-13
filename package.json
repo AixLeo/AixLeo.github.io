@@ -1,14 +1,14 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "name": "aix-blog",
+    "title": "AIX Blog",
+    "author": "AIX <aixleo12138@gmail.com>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "http://aixleo.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/qiubaiying/qiubaiying.github.io"
+        "url": "https://github.com/AixLeo/AixLeo.github.io.git"
     },
-    "bugs": "https://github.com/qiubaiying/qiubaiying.github.io/issues",
+    "bugs": "https://github.com/AixLeo/AixLeo.github.io/issues",
     "scripts": {
         "preview": "cd _site; python -m SimpleHTTPServer 8020",
         "py3view": "cd _site; python3 -m http.server 8020",
