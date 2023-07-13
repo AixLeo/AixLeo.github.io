@@ -34,7 +34,7 @@ tags:
 >2. knowledge of any $k-1$ or fewer $D_i$ pieces leaves $D$ completely undetermined (in the sense that all its possible values are equally likely).
 
 &emsp;&emsp;Shamir门限方案有两个条件，一是等于或多于$k$方的情况，一是少于$k$人的情况，满足同态性质，定义如下：
-![tu1](/_posts/MPC/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png)
+![tu1](/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png)
 
 
 &emsp;&emsp;需要注意的是，原始的Sharmir门限方案只满足 $(+,+)$ 同态。原因是 $d$ 个 $t-1$ 次多项式相加，仍是 $t-1$ 次，而 $d$ 个 $t-1$ 次多项式相乘，结果为 $d(t-1)$ 次。根据拉格朗日插值定理，至少需要 $d(t-1)+1$ 个份额才能恢复出秘密，可能会出现 $d(t-1)+1>n$ ，即拥有所有份额都无法恢复秘密的情况。
@@ -50,7 +50,7 @@ tags:
 
 ## Composite threshold scheme
 ### Definition
-![tu2](/_posts/MPC/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png)
+![tu2](/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png)
 <!-- ![图2](https://aixleo.github.io/MPC/res/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png) -->
 
 &emsp;&emsp;组合门限方案的概念对Shamir门限方案的定义进行了修改。
@@ -62,7 +62,7 @@ tags:
 - - $I'$ 是维度为 $k-1$ 的 $I$ 子集，即 $k-1$ 个参与者，$d_{ij}=x_{ij}$ 表示给定sub-secret $d_j$ 的任意 $k-1$ 个sub-shares。（Note that: 每一个sub-secret $d_j$ 及构成它的sub-shares $d_{ij}$ 单独拎出来都是一个Shamir门限方案，因此，同样满足 $k-1$ 个份额无法恢复出秘密的性质。）
 - 综上所述，在给定上述知识后，敌手猜测 $d_j=x_j$ 的概率和只给定秘密取值空间时的概率相等（即在给定super-secret $D$，super-shares $D_i$ 以及 $k-1$ 个sub-shares $d_{i,j}$ 时，敌手无法获得额外知识）。
 
-![tu3](/_posts/MPC/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/20230707.jpg)
+![tu3](/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/20230707.jpg)
 
 > **Theorem 1** If the secret domain $S$ and the share domain $T$ are finite and of the same cardinality, then every $(\oplus,\otimes)$-homomorphic $(k,n)$ threshold scheme is a $(\oplus,\otimes)$ -composite $(k,n)$ threshold scheme.
 
@@ -80,7 +80,7 @@ tags:
 &emsp;**Note that:** Shamir's scheme, the shares $s_1,s_2,\cdots,s_n$ are $k$ - *consistent* **if and only if** the interpolation of the points $(1,s_l),(2,s_2),\cdots,(n,s_n)$ yields a polynomial of degree at most $d = k - 1$. It is also useful to observe that if the sum of two polynomials is of degree at most $d$, then either both are of degree at most $d$ or both are of degree greater than $d$.
 
 ## VSS思路
-![tu4](/_posts/MPC/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/2ee2c082d5966d18f232db178fab9d547f4487399c0f87cc080788b770b913dc.png)
+![tu4](/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/2ee2c082d5966d18f232db178fab9d547f4487399c0f87cc080788b770b913dc.png)
 
 图中主要思路是一种交互式的协议，prover加密了 $n$ 个（假设100个）多项式发送给verifier，verifier从中**随机选择**50个验证多项式的度（假设这些多项式的度都至多为 $d$，那有理由相信剩下的50个多项式的度也为 $d$）。思路用了 $k$ 一致性的定义，即由 $n$ 个不同点处的值给出的多项式 $P$ 的degree至多为 $d$，则表示是同一个秘密所生成的多项式，自然也就恢复出同一个秘密。
 
