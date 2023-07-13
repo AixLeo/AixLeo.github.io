@@ -8,6 +8,7 @@
             }
         });
     </script>
+    <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
 </head>
 
 [原文请点击**pdf_source**](https://link.springer.com/chapter/10.1007/3-540-47721-7_19)
