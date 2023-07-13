@@ -52,8 +52,8 @@ tags:
 ### Definition
 
 <div style="text-align: center;">
-<img src="https://github.com/AixLeo/AixLeo.github.io/blob/main/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png" alt="图1" style=max-width:90%;></div>
-![tu2](/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png)
+<img src="/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/b4f6ead482a1e9433752954dfdb725d7ad15e37bb30bb39e925165ca50ca8286.png" alt="图1" style=max-width:90%;></div>
+<!-- ![tu2](/img/res/Secret_Sharing_Homomorphisms_Keeping_Shares_of_a_Secret_Secret/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png) -->
 <!-- ![图2](https://aixleo.github.io/MPC/res/bf751a3a234ebe97628aa16624ff8ddf976a397f7282b46b97d6598cf49dc888.png) -->
 
 &emsp;&emsp;组合门限方案的概念对Shamir门限方案的定义进行了修改。
