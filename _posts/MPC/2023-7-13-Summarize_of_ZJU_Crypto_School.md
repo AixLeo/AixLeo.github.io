@@ -23,6 +23,6 @@ tags:
 - 简洁非交互式零知识证明（上海交通大学 胡云聪）
 - 格基密码学（Washington State University Feng-Hao Liu）。
 
-<iframe src="Summarize_of_ZJU_Crypto_School.pdf" width="100%" height="50%">Summarize of ZJU Crypto School</iframe>
+<iframe src="https://github.com/AixLeo/AixLeo.github.io/blob/main/_posts/MPC/2023-7-12-Summarize_of_ZJU_Crypto_School.pdf" width="100%" height="50%">Summarize of ZJU Crypto School</iframe>
 
-<!-- Summarize Slides下载请点击[这里](https://aixleo.github.io/_posts/MPC/Summarize_of_ZJU_Crypto_School.pdf) -->
+<!-- Summarize Slides下载请点击[这里](https://github.com/AixLeo/AixLeo.github.io/blob/main/_posts/MPC/2023-7-12-Summarize_of_ZJU_Crypto_School.pdf) -->
