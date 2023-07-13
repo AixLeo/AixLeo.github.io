@@ -13,6 +13,8 @@
 
 ### [Summarize of ZJU Crypto School](MPC/Summarize_of_ZJU_Crypto_School.html)
 
+### [new](MPC/new.html)
+
 
 
 
