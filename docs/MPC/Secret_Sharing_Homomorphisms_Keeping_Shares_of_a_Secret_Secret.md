@@ -8,7 +8,6 @@
             }
         });
     </script>
-    <script type="text/javascript" src="//lbesson.bitbucket.io/md/strapdown.min.js?nonavbarfixed=y"></script>
 </head>
 
 [原文请点击**pdf_source**](https://link.springer.com/chapter/10.1007/3-540-47721-7_19)
