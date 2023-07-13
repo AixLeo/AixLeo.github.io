@@ -5,7 +5,7 @@
     <title>ss</title>
   </head>
   <body>
-    <xmp theme="paper">
+    <textarea theme="paper">
     
     [原文请点击**pdf_source**](https://link.springer.com/chapter/10.1007/3-540-47721-7_19)
     
@@ -91,15 +91,19 @@
     
     - [BGW88] [Ben-Or, Michael, Shafi Goldwasser, and Avi Wigderson. "Completeness theorems for non-cryptographic fault-tolerant distributed computation." Providing sound foundations for cryptography: on the work of Shafi Goldwasser and Silvio Micali. 2019. 351-371.
     ](https://dl.acm.org/doi/abs/10.1145/3335741.3335756)
-    
-    
-    
-
-
-</xmp>
+    </textarea>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
     <script
       type="text/javascript"
-      src="strapdown.min.js?nonavbarfixed=y"
+      src="//lbesson.bitbucket.io/md/strapdown.min.js?nonavbarfixed=y"
     ></script>
   </body>
 </html>
