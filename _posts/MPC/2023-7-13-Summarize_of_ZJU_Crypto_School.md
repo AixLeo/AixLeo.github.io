@@ -23,6 +23,6 @@ tags:
 - 简洁非交互式零知识证明（上海交通大学 胡云聪）
 - 格基密码学（Washington State University Feng-Hao Liu）。
 视频回放请点击[👉哔哩哔哩](https://space.bilibili.com/500096368/channel/collectiondetail?sid=1482130)
-更过资料下载请点击[👉这里](/assets/ZJU_Crypto_School/ZJU_Crypto_School.zip)
+更过资料下载请点击[👉这里](https://pan.baidu.com/s/1j4e1-GekplBQm5YfpFF34w?pwd=n5ka)
 <div style="text-align: center;">
 <iframe src="/assets/ZJU_Crypto_School/2023-7-12-Summarize_of_ZJU_Crypto_School.pdf" width="600px" height="400px">Summarize of ZJU Crypto School</iframe></div>
