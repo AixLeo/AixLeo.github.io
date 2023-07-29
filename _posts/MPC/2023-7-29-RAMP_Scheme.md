@@ -54,11 +54,10 @@ tags:
 ## Shannon perfect security & relative security
 &emsp;&emsp;香农完美安全的定义如下。考虑由 $f(1),f(2),\cdots,f(d)$组成的 $d$ 维向量空间 $\mathbf{T}$，给定 $z$ shadows的知识，存在 $\mathbf{T}$ 的仿射子空间(affine subspace) $\mathbf{U}$，其维度(dimensionality)为 $dim(\mathbf{U})=\text{min}\{d,\text{max}\{0,k-z\}\}$，并且具有以下性质：
 对于每一个 $\xi=(\xi(1),\xi(2),\cdots,\xi(d))$，可以得到：
-- Pro($\xi\notin\mathbf{U}=0$)
-- $\text{Pro}(\xi = w\in\mathbf{U} | z)=\frac{\text{Pro}(\xi = w\in\mathbf{U})}{\text{Pro}(\xi\in\mathbf{U})}$
+Pro($\xi\notin\mathbf{U}=0$)
+$\text{Pro}(\xi = w\in\mathbf{U} | z)=\frac{\text{Pro}(\xi = w\in\mathbf{U})}{\text{Pro}(\xi\in\mathbf{U})}$
 
-
-<img src="/assets/res/ramp/2023-07-05-51.png" alt="图5" style=max-width:90%;></div>
+![tu5](/assets/res/ramp/2023-07-05-51.png)
 
 &emsp;&emsp;简而言之，拥有来自 $(d,k,n)$ 线性RAMP方案的 $z$ 个shadows的贝叶斯对手现在知道期望的列表 $\xi\in\mathbf{U}$。这比他在开始知道任何阴影之前所拥有的信息量有了相当大的增加。但是所获得的这些知识**又不足以**让他轻而易举的恢复出秘密。
 
