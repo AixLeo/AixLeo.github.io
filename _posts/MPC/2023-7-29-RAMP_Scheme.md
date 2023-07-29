@@ -52,11 +52,12 @@ tags:
 <div STYLE="page-break-after: always;"></div>
 
 ## Shannon perfect security & relative security
-&emsp;&emsp;香农完美安全的定义如下。考虑由 $f(1),f(2),\cdots,f(d)$组成的 $d$ 维向量空间 $\mathbf{T}$，给定 $z$ shadows的知识，存在 $\mathbf{T}$ 的仿射子空间(affine subspace) $\mathbf{U}$，其维度(dimensionality)为 $dim(\mathbf{U})=\text{min}\{d,\text{max}\{0,k-z\}\}$，并且具有以下性质：
-对于每一个 $\xi=(\xi(1),\xi(2),\cdots,\xi(d))$，可以得到：
-Pro($\xi\notin\mathbf{U}=0$)
+&emsp;&emsp;香农完美安全的定义如下。考虑由 $f(1),f(2),\cdots,f(d)$组成的 $d$ 维向量空间 $\mathbf{T}$，给定 $z$ shadows的知识，存在 $\mathbf{T}$ 的仿射子空间(affine subspace) $\mathbf{U}$，其维度(dimensionality)为 $dim(\mathbf{U}) = \text{min} \{ d,\text{max} \{ 0,k-z \} \}$，并且具有以下性质：
+对于每一个 $\xi=(\xi(1),\xi(2),\cdots,\xi(d))$，可以得到：  
 
-$\text{Pro}(\xi = w\in\mathbf{U} | z)=\frac{\text{Pro}(\xi = w\in\mathbf{U})}{\text{Pro}(\xi\in\mathbf{U})}$
+$$\text{Pro}(\xi\notin\mathbf{U}=0)$$  
+
+$$\text{Pro}(\xi = w\in\mathbf{U} | z)=\frac{\text{Pro}(\xi = w\in\mathbf{U})}{\text{Pro}(\xi\in\mathbf{U})}$$  
 
 ![tu5](/assets/res/ramp/2023-07-05-51.png)
 
@@ -68,38 +69,38 @@ $\text{Pro}(\xi = w\in\mathbf{U} | z)=\frac{\text{Pro}(\xi = w\in\mathbf{U})}{\t
 
 ### 初始化
 
-设素数 $p≥v+1$，定义 $t_0=k-d$，设 $\mathcal{K}=(\mathbb{Z}_p)^{t_0}$, 定义值 $x_1,x_2,\cdots,x_v$为$\mathbb{Z}_p$ 中的 $v$ 个不同的非零元，对于所有的 $1\le i\le v$，$D$ 将 $x_i$ 给 $P_i$，其中 $x_i$ 是公开的信息。
+设素数 $p≥v+1$，定义 $t_0=k-d$，设 $\mathcal{K}=(\mathbb{Z}_p)^{t_0}$ , 定义值 $x_1,x_2,\cdots,x_v$ 为 $\mathbb{Z}_p$ 中的 $v$ 个不同的非零元，对于所有的 $1\le i\le v$，$D$ 将 $x_i$ 给 $P_i$，其中 $x_i$ 是公开的信息。
 
 ### 共享分发
 
-设 $D$ 想要共享秘密 $K=(a_0,\cdots,a_{t_0-1})$。首先，$D$ 从 $\mathbb{Z}_p$ 中**独立而随机**地选择 $a_{t_0},\cdots,a_{k-1}$。从而 $D$ 定义:$a(x)=\sum_{j=0}^{k-1}a_jx^j$.
-这里的 $a(x)$ 是一个随即多项式（独立随机选择 $a_{t_0},\cdots,a_{k-1}$ 保证了其随机性），其中次数最大为 $k-1$。这样，前 $t_0$ 个前个系数包含了秘密 $K$。
+设 $D$ 想要共享秘密 $K=(a_0, \cdots, a_{t_0-1})$ 。首先，$D$ 从 $\mathbb{Z}_ p$ 中**独立而随机**地选择 $a_ {t_0}, \cdots, a_ {k-1}$ 。从而 $D$ 定义: $a(x)=\sum_ {j=0}^{k-1}a_ j x^j$ 。
+这里的 $a(x)$ 是一个随即多项式（独立随机选择 $a_ {t_ 0},\cdots,a_ {k-1}$ 保证了其随机性），其中次数最大为 $k-1$ 。这样，前 $t_ 0$ 个前个系数包含了秘密 $K$ 。
 
-对 $1\le i\le v$，$D$ 构造共享 $y_i=a(x_i)$，并共享 $y_i$ 给 $P_i$。
+对 $1\le i\le v$，$D$ 构造共享 $y_ i=a(x_ i)$，并共享 $y_ i$ 给 $P_i $。
 
 <div STYLE="page-break-after: always;"></div>
 
 ## RIGID LINEAR SCHEMES
 这里需要用到**超平面**的概念：超平面是 $n$ 维欧氏空间中余维度等于一的线性子空间，也就是必须是 $(n-1)$ 维度。可以想象成线中的一点，或者面中的一条线，或者空间中的一个面。
-$n$ 维空间 $F^n$ 中的超平面是由方程：$a_1x_1+\cdots+a_nx_n=b$ 定义的子集，其中 $a_1,\cdots,a_n\in F$ 是不全为零的常数。或者也可以表示成向量的形式：
-$
+$n$ 维空间 $F^n$ 中的超平面是由方程：$a_ 1x_ 1+\cdots+a_ nx_ n=b$ 定义的子集，其中 $a_ 1, \cdots, a_ n \in F$ 是不全为零的常数。或者也可以表示成向量的形式：
+$$
 \begin{pmatrix}
-  a_1 & a_2 & \cdots & a_n
+  a_ 1 & a_ 2 & \cdots & a_ n
 \end{pmatrix}\begin{pmatrix}
-  x_1 \\ x_2 \\ \cdots \\ x_n
+  x_ 1 \\ x_ 2 \\ \cdots \\ x_ n
 \end{pmatrix}=b
-$
+$$
 
 ### 举例：秘密为三维空间的一点 $(x,y,z)$
 分发者 $D$ 计算如下：
-$
+$$
 \begin{cases}
   ax+by+cz=c(1)  \\
   ax+by+cz=c(2) \\
   ax+by+cz=c(3)
 \end{cases}
-$
-其中 $c(\cdot)$ 代表常数，$D$ 将三个方程分别分发给 $P_1, P_2, P_3$，即分发的份额是“超平面”（这里就是一个平面）， $d$ 个超平面可以获得一些信息，比如这里，两个平面能够确定秘密点 $(x,y,z)$ 所在的直线，然而并不能恢复秘密。
+$$
+其中 $c(\cdot)$ 代表常数，$D$ 将三个方程分别分发给 $P_ 1, P_ 2, P_ 3$，即分发的份额是“超平面”（这里就是一个平面）， $d$ 个超平面可以获得一些信息，比如这里，两个平面能够确定秘密点 $(x,y,z)$ 所在的直线，然而并不能恢复秘密。
 
 <div STYLE="page-break-after: always;"></div>
 
