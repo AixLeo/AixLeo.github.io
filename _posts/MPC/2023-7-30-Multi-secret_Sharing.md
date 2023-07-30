@@ -11,6 +11,7 @@ tags:
     - Secret Sharing
 ---
 
+<head>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -30,6 +31,7 @@ tags:
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
 </script>
+</head>
 
 # A $(t,n)$ multi-secret sharing scheme
 
