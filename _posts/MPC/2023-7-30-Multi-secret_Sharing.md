@@ -73,9 +73,9 @@ Chien等人方案中秘密可以被同时重构的思想能有效降低计算和
 
 随机选择素数 $q$ 并构造 $t-1$ 次多项式 $h(x)$ mod $q$ ，如下：  
 
-\[
+$$
     h(x)=P_ 1+P_ 2x^ 1+\cdots +P_ px^ {p-1}+a_ 1x^ p+a_ 2x^ {p+1}+\cdots +a_ {t-p}x^ {t-1} \text{ mod } q
-    \]  
+$$ 
     
 其中， $0< P_ 1,P_ 2,\cdots,P_p,a_ 1,a_ 2,\cdots,a_ {t-p}<q$ 。  
 
@@ -87,9 +87,9 @@ Chien等人方案中秘密可以被同时重构的思想能有效降低计算和
 
 随机选择素数 $q$ 并构造 $p-1$ 次多项式 $h(x)$ mod $q$ ，如下：  
 
-\[
+$$
     h(x)=P_ 1+P_ 2x^ 1+\cdots +P_ px^ {p-1} \text{ mod } q
-    \]  
+$$ 
 
 其中， $0< P_ 1,P_ 2,\cdots,P_p<q$ 。 
 
@@ -107,25 +107,20 @@ Chien等人方案中秘密可以被同时重构的思想能有效降低计算和
 
 至少 $t$ 个参与者汇集他们的份额 $f(r,s_ i),\text{ for }i=1,2,\cdots,t$ ，利用拉格朗日插值重构，计算如下：
 
-<figure>
+<!-- <figure>
 <center>
 <img src="/assets/res/Multi_SS/2023-07-30-35.png" alt="图2" style=max-width:90%;>
 </center>
-</figure>
+</figure> -->
 <!-- <div style="text-align: center;">
 <img src="/assets/res/Multi_SS/2023-07-30-35.png" alt="图1" style=max-width:90%;></div> -->
-<!-- ![图 0](/assets/res/Multi_SS/2023-07-30-35.png)   -->
+![图 0](/assets/res/Multi_SS/2023-07-30-35.png)  
 
 #### $p> t$
 
 除了需要至少 $t$ 个参与者汇集他们的份额 $f(r,s_ i)\text{ for }i=1,2,\cdots,t$ 之外，还需要分发者公布的 $h(i),\text{ for }i=1,2,\cdots,p-t$ 。当拥有 $t$ 对 $(f(r,s_ i),y_ i)$ 和 $p-t$ 对 $(i,h(i))$ 值时，可以通过拉格朗日插值确定唯一 $p-1$ 次多项式 $h(x)$ ，计算如下：  
 
-<figure>
-<center>
-<img src="/assets/res/Multi_SS/2023-07-30-5.png" alt="图2" style=max-width:90%;>
-</center>
-</figure>
-<!-- ![图 1](/assets/res/Multi_SS/2023-07-30-5.png)   -->
+![图 1](/assets/res/Multi_SS/2023-07-30-5.png)  
 
 ## 4. 结论
 在信息论中，该方案是香农完美安全的。  
