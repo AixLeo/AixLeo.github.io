@@ -82,7 +82,7 @@ For every $n \in \mathbb{N}$ and $1 \le k \le n$, let $(k, n)$-THR be **the thre
 
 #### 1.2.4 Evolving access structure
 
-A (possibly infinite) sequence of access structures $\{\mathcal{A}_ t\}_ {t\in \mathbb{N}}$ is called $\texttt{evolving}$ if the following conditions hold:
+A (possibly infinite) sequence of access structures ${\{ \mathcal{A}_ t \}}_ {t\in \mathbb{N}}$ is called $\texttt{evolving}$ if the following conditions hold:
 
 1) For every $t \in \mathbb{N}$ , it holds that $\mathcal{A}_ t$ is an access structure over $t$ parties.
 2) For every $t \in \mathbb{N}$, it holds that $\mathcal{A}_ t| _ {t-1}$ is equal to $\mathcal{A}_ {t-1}$.
@@ -110,7 +110,6 @@ For every $k \in \mathbb{N}$, let evolving $k- \texttt{THR}$ be the evolving thr
 这种构造受 Benaloh 和 Leichter [[BL90]](#BL90) 的影响，它给出了任何（标准）访问结构 $\mathcal{A}$ 的秘密共享方案，其特征函数 $1_{\mathcal{A}}$ 由单调公式描述。单调公式（monotone formula）是一棵二叉树，树中的每一片叶子都标有一个输入变量，每一个内部节点都标有一个 $\wedge$ 或 $\vee$ 门。树的根是输出门。
 
 ### 3.2 Construction
-
 $$f(x_ 1,\cdots,x_ n) = (x_ n \wedge f(x_ 1,\cdots, x_ {n-1},1)) \vee f(x_ 1,\cdots,x_ {n-1}, 0)$$
 
 - 公式中的每个门都被分配到一个标签（一个比特）；
@@ -140,15 +139,13 @@ $$f_{t-1}(b_1,\cdots,b_{t-1})= (x_t \wedge f_t(b_1,\cdots,b_{t-1},1))  \vee f_t(
 ### 4.1 Theorem
 
 对任一evolving 2-THR access structure，存在一个秘密共享方案，其中第 $t^{th}$ 参与方的份额大小受到以下约束：
-
-$$\text{log}\ t+\text{log}\text{log}\ t+2\text{log}\text{log}\text{log}\ t+6$$
+$$ \text{log}\ t+\text{log}\text{log}\ t+2\text{log}\text{log}\text{log}\ t+6 $$
 
 Evolving 2-THR Acess Structure可以通过优化通用结构构造：对 $t \in \mathbb{N}$ 且 $b_1, \cdots, b_t \in \{0, 1\}$ ，当遇到一个常量叶 $f_t(b_1,\cdots, b_t)$ 的值为 1 时，我们就不需要在以后的步骤中扩展它。事实上，$f_t(b_1,\cdots, b_t)=1$ 意味着 $(b_1, \cdots, b_t)$ 所代表的集合是 **qualified**。任何包含晚于 t 的各方的子集，包括该子集在内，都可以通过使用 $(b_1, \cdots, b_t)$ 所代表的各方份额来恢复秘密。
 
 ### 4.2 Proof
 
-**Lemma：**假设存在一种evolving 2-THR access structure的秘密共享方案，其中第 $t$ 方的共享大小为 $\sigma(t)$。那么，存在一种evolving 2-THR access structure的秘密共享方案，其中第 $t$ 方的共享大小为
-
+**Lemma：**假设存在一种evolving 2-THR access structure的秘密共享方案，其中第 $t$ 方的共享大小为 $\sigma(t)$。那么，存在一种evolving 2-THR access structure的秘密共享方案，其中第 $t$ 方的共享大小为:
 $$ \text{log}\ t+\sigma(\text{log}\ t+1) $$
 
 证明就是反复应用上述引理。
