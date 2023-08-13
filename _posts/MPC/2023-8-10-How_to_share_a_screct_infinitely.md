@@ -57,26 +57,26 @@ tags:
 
 #### 1.2.1 The standard setting of (perfect) secret sharing
 
-Let $\mathcal{P}_n = \{1,\cdots,n\}$ be a set of $n$ parties. A collection of subsets $\mathcal{A} \subseteq 2^{\mathcal{P}_n}$ is \textbf{\red{monotone}} if for every $B \in \mathcal{A}$, and $B \subseteq C$ it holds that $C \in \mathcal{A}$.
+Let $\mathcal{P}_n = \{1,\cdots,n\}$ be a set of $n$ parties. A collection of subsets $\mathcal{A} \subseteq 2^{\mathcal{P}_n}$ is **monotone** if for every $B \in \mathcal{A}$, and $B \subseteq C$ it holds that $C \in \mathcal{A}$.
 
 #### 1.2.2 Access Structure
 
-An access structure $A \subseteq 2^{\mathcal{P}_n}$ is a monotone collection of subsets. Subsets in $\mathcal{A}_n$ are called \textbf{qualified} and subsets not in $\mathcal{A}$ are called \textbf{unqualified}.
+An access structure $A \subseteq 2^{\mathcal{P}_n}$ is a monotone collection of subsets. Subsets in $\mathcal{A}_n$ are called **qualified** and subsets not in $\mathcal{A}$ are called **unqualified**.
 
 #### 1.2.3 Threshold access structure
 
-For every $n \in \mathbb{N}$ and $1 \le k \le n$, let $(k, n)$-THR be \textbf{the threshold access structure} over $n$ parties which contains all subsets of size at least $k$.
+For every $n \in \mathbb{N}$ and $1 \le k \le n$, let $(k, n)$-THR be **the threshold access structure** over $n$ parties which contains all subsets of size at least $k$.
 
 #### 1.2.4 Evolving access structure
 
-A (possibly infinite) sequence of access structures $\{\mathcal{A}_t\}_{t\in \mathbb{N}}$ is called \textbf{\texttt{evolving}} if the following conditions hold:
+A (possibly infinite) sequence of access structures $\{\mathcal{A}_ t\}_ {t\in \mathbb{N}}$ is called $\texttt{evolving}$ if the following conditions hold:
 
-1) For every $t \in \mathbb{N}$, it holds that $\mathcal{A}_t$ is an access structure over $t$ parties.
-2) For every $t \in \mathbb{N}$, it holds that $\mathcal{A}_t|_{t-1}$ is equal to $\mathcal{A}_{t-1}$.
+1) For every $t \in \mathbb{N}$ , it holds that $\mathcal{A}_ t$ is an access structure over $t$ parties.
+2) For every $t \in \mathbb{N}$, it holds that $\mathcal{A}_ t| _ {t-1}$ is equal to $\mathcal{A}_ {t-1}$.
 
 #### 1.2.5 Evolving threshold access structure
 
-For every $k \in \mathbb{N}$, let evolving $k-\texttt{THR}$ be the evolving threshold access structure which contains for any access structure in the sequence all subsets of size at least $k$.
+For every $k \in \mathbb{N}$, let evolving $k- \texttt{THR}$ be the evolving threshold access structure which contains for any access structure in the sequence all subsets of size at least $k$.
 
 ## 2. Warm-Up
 
@@ -85,7 +85,8 @@ For every $k \in \mathbb{N}$, let evolving $k-\texttt{THR}$ be the evolving thre
 - $s\in \{0,1\}$ be the secret. Each vertex $v\in V$ assigned a lable.
 - For $v = s$ the label is $\omega_s = s$, for $v = t$ the label is $\omega_t = 0$ and for the rest of the vertices the label is chosen independently uniformly at random $\omega_v\leftarrow \{0,1\}$.
 - The share of a party $e=(u,v)\in E$ is $\omega_u\oplus\omega_v$.
-- Correctness: $$(\omega_{v_1}\oplus\omega_{v_2})\oplus(\omega_{v_2}\oplus\omega_{v_3})\oplus\cdots\oplus(\omega_{v_{k-1}}\oplus\omega_{v_k})=\omega_{v_1}\oplus\omega_{v_k}=s $$
+- Correctness: 
+  $$(\omega_ {v_ 1}\oplus\omega_ {v_ 2})\oplus(\omega_ {v_ 2}\oplus\omega_ {v_ 3})\oplus\cdots\oplus(\omega_ {v_ {k- 1}}\oplus\omega_ {v_ k})=\omega_ {v_ 1}\oplus\omega_ {v_ k}=s $$
 
 ## 3. A Scheme for General Evolving Access Structures
 
@@ -97,7 +98,7 @@ For every $k \in \mathbb{N}$, let evolving $k-\texttt{THR}$ be the evolving thre
 
 ### 3.2 Construction
 
-$$f(x_1,\cdots,x_n) = (x_n \wedge f(x_1,\cdots, x_{n-1},1)) \vee f(x_1,\cdots,x_{n-1}, 0)$$
+$$f(x_ 1,\cdots,x_ n) = (x_ n \wedge f(x_ 1,\cdots, x_ {n-1},1)) \vee f(x_ 1,\cdots,x_ {n-1}, 0)$$
 
 - 公式中的每个门都被分配到一个标签（一个比特）；
 - 叶子节点的标签对应于参与方的份额；
@@ -107,34 +108,35 @@ $$f(x_1,\cdots,x_n) = (x_n \wedge f(x_1,\cdots, x_{n-1},1)) \vee f(x_1,\cdots,x_
   - 如果父节点是 $\wedge$ 门，则随机抽取一个 $u\leftarrow\{0,1\}$ 并给其中一个孩子分配标签 $u$ ，给另一个孩子分配标签 $v\oplus u$。
 - 第 $i$ 个参与方的秘密份额由第 $i$ 个输入变量相对应的所有叶子标签组成。
 
-当 $t=1$ 时，即只有一个参与方时，访问结构 $$f_1:\ \ f_1(x_1) = (x_1 \wedge f_1(1)) \vee f_1(0)$$ 当 $f_1(1)=1$ 时，Party 1获得标签 $s$，当 $f_1(1)=0$ 时，获得标签 $r(1)$。 
+当 $t=1$ 时，即只有一个参与方时，访问结构 
+$$f_ 1:\ \ f_ 1(x_ 1) = (x_ 1 \wedge f_ 1(1)) \vee f_ 1(0)$$ 当 $f_ 1(1)=1$ 时，Party 1获得标签 $s$，当 $f_ 1(1)=0$ 时，获得标签 $r(1)$。 
 
 ![fig1](/assets/res/how_to_share_a_secret_infinetely/fig1.png)
 
 随后，当 $t>1$ 方加入时，访问结构 
 $$f_{t-1}(b_1,\cdots,b_{t-1})= (x_t \wedge f_t(b_1,\cdots,b_{t-1},1))  \vee f_t(b_1,\cdots,b_{t-1},0)$$
 
-<div style="text-align: center;">
-<img src="/assets/res/how_to_share_a_secret_infinetely/fig2.png" alt="图2" style=max-width:90%;></div>
+![fig2](/assets/res/how_to_share_a_secret_infinetely/fig2.png)
 
 也即是说，当下一个参与方加入时，我们重复采用上述秘密共享方案展开常数项叶子节点。比如，当 $t=2$ 时，得到的二叉树如下图：其中当 $f_2(1, 1) = 1$ 时，Party 2 得到标签 $r(1) \oplus s$ ，反之则得到标签 $r(1,1)$ 。另外，当 $f_2(0, 1) = 1$ 时，Party 2 还会得到标签 $s$ 反之则得到 $r(0,1)$ 。
 
-<div style="text-align: center;">
-<img src="/assets/res/how_to_share_a_secret_infinetely/fig3.png" alt="图3" style=max-width:90%;></div>
+![fig3](/assets/res/how_to_share_a_secret_infinetely/fig3.png)
 
 ## 4. An Efficient Scheme for Evolving 2-Threshold
 
 ### 4.1 Theorem
 
 对任一evolving 2-THR access structure，存在一个秘密共享方案，其中第 $t^{th}$ 参与方的份额大小受到以下约束：
-$$\text{log}t+\text{log}\text{log}t+2\text{log}\text{log}\text{log}t+6$$
+
+$$\text{log}\ t+\text{log}\text{log}\ t+2\text{log}\text{log}\text{log}\ t+6$$
 
 Evolving 2-THR Acess Structure可以通过优化通用结构构造：对 $t \in \mathbb{N}$ 且 $b_1, \cdots, b_t \in \{0, 1\}$ ，当遇到一个常量叶 $f_t(b_1,\cdots, b_t)$ 的值为 1 时，我们就不需要在以后的步骤中扩展它。事实上，$f_t(b_1,\cdots, b_t)=1$ 意味着 $(b_1, \cdots, b_t)$ 所代表的集合是 **qualified**。任何包含晚于 t 的各方的子集，包括该子集在内，都可以通过使用 $(b_1, \cdots, b_t)$ 所代表的各方份额来恢复秘密。
 
 ### 4.2 Proof
 
 **Lemma：**假设存在一种evolving 2-THR access structure的秘密共享方案，其中第 $t$ 方的共享大小为 $\sigma(t)$。那么，存在一种evolving 2-THR access structure的秘密共享方案，其中第 $t$ 方的共享大小为
-$$\text{log}t+\sigma(\text{log}t+1)$$
+
+$$ \text{log}\ t+\sigma(\text{log}\ t+1) $$
 
 证明就是反复应用上述引理。
 ![fig4](/assets/res/how_to_share_a_secret_infinetely/fig4.png)
@@ -144,7 +146,7 @@ $$\text{log}t+\sigma(\text{log}t+1)$$
 ### 5.1 Theorem
 
 存在一种evolving k-Threshold access structure的秘密共享方案，其中 $t$ 方的共享份额大小最多为：
-$$ (k-1) \cdot \text{log} t + 6k^3 \cdot \text{log}\text{log} t \cdot \text{log}\text{log}\text{log} t + 7k^4 \cdot \text{log} k $$
+$$ (k-1) \cdot \text{log} t + 6k^ 3 \cdot \text{log}\text{log} t \cdot \text{log}\text{log}\text{log} t + 7k^ 4 \cdot \text{log} k $$
 
 ### 5.2 Proof
 
