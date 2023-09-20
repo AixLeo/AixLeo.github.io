@@ -13,11 +13,9 @@ tags:
 ---
 
 <head>
-<script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX", "output/CommonHTML"],
-        extensions: ["tex2jax.js"],
         tex2jax: {
             skipTags: [],
             inlineMath: [['$', '$']],
