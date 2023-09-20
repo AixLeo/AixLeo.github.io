@@ -19,12 +19,10 @@ tags:
         jax: ["input/TeX", "output/CommonHTML"],
         extensions: ["tex2jax.js"],
         tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            skipTags: [],
             inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']]
+            displayMath: [['$$', '$$']],
         },
-        skipStartupTypeset: true,
-        //showMathMenu: false,
         menuSettings: {
             zoom: 'Click',
         }
