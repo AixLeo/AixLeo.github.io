@@ -29,6 +29,23 @@ tags:
         }
     });
 </script>
+<script type="text/javascript">
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('code').forEach(code => {
+    const text = code.innerHTML;
+    is_inline_math = /^\$(.*)\$$/.exec(text);
+    is_display_math = /^\$\$(.*)\$\$$/ms.exec(text) || /^\\begin\{.+\}(.*)\\end\{.+\}/ms.exec(text);
+    if (is_inline_math || is_display_math) {
+      code.parentElement.classList.add('has-jax');
+      if (is_inline_math) {
+        code.outerHTML = "<span class=yuuki_mathjax_inline>" + text + "</span>";
+      } else {
+        code.outerHTML = "<span class=yuuki_mathjax_display>" + text + "</span>";
+      }
+    }
+  });
+});
+</script>
     <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
     <!-- <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
