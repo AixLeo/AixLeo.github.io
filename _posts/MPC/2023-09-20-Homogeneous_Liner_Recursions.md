@@ -13,7 +13,7 @@ tags:
 ---
 
 <head>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js">
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         jax: ["input/TeX", "output/CommonHTML"],
@@ -29,7 +29,7 @@ tags:
             zoom: 'Click',
         }
     });
-</script>
+</script></script>
 </head>
 
 # Homogeneous Liner Recursions (HLR)
