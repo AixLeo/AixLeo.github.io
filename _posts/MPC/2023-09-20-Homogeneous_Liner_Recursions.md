@@ -21,10 +21,7 @@ tags:
         tex2jax: {
             skipTags: [],
             inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']],
-        },
-        menuSettings: {
-            zoom: 'Click',
+            displayMath: [['$$', '$$']]
         }
     });
 </script>
