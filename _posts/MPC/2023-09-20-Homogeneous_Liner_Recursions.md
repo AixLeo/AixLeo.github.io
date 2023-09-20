@@ -12,22 +12,22 @@ tags:
     - Discrete Mathematics
 ---
 
-<head>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        jax: ["input/TeX", "output/CommonHTML"],
-        extensions: ["tex2jax.js"],
-        tex2jax: {
-            skipTags: [],
-            inlineMath: [['$', '$']]
-        },
-        svg: {
+<html>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
     fontCache: 'global'
   }
-    });
+};
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+</html>
 
 # Homogeneous Liner Recursions (HLR)
 
