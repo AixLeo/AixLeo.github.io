@@ -13,13 +13,20 @@ tags:
 ---
 
 <head>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+<script <strong>async</strong> src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js" type="text/javascript">
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+        jax: ["input/TeX", "output/CommonHTML"],
+        extensions: ["tex2jax.js"],
         tex2jax: {
             skipTags: [],
             inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']]
+            displayMath: [['$$', '$$']],
+        },
+        skipStartupTypeset: true,
+        //showMathMenu: false,
+        menuSettings: {
+            zoom: 'Click',
         }
     });
 </script>
