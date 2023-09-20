@@ -19,15 +19,14 @@ tags:
         extensions: ["tex2jax.js"],
         tex2jax: {
             skipTags: [],
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']],
+            inlineMath: [['$', '$']]
         },
         svg: {
     fontCache: 'global'
   }
     });
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 # Homogeneous Liner Recursions (HLR)
@@ -53,7 +52,11 @@ $$
 
 上述辅助方程为 $t$ 次线性方程，因此存在 $t$ 个根。需要注意的是，这 $t$ 个根可能出现重根。  
 
-假设 $\alpha_ 1,\alpha_ 2,\cdots, \alpha_ l$ 是上述辅助方程的根，则方程可以表示为 $$(x-\alpha_ 1)^{m_ 1}(x-\alpha_ 2)^{m_ 2}\cdots (x-\alpha_ l)^{m_ l}=0$$ 
+假设 $\alpha_ 1,\alpha_ 2,\cdots, \alpha_ l$ 是上述辅助方程的根，则方程可以表示为 
+
+$$
+(x-\alpha_ 1)^{m_ 1}(x-\alpha_ 2)^{m_ 2}\cdots (x-\alpha_ l)^{m_ l}=0
+$$ 
 
 其中， $m_ 1,m_ 2,\cdots m_ l$ 分别为对应根的重复度（multiplicity），即重根的个数，且 $m_ 1+m_ 2+\cdots +m_ l=t$ 。  
 <br />
