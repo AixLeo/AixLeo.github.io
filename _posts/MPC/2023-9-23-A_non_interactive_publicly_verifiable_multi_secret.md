@@ -118,7 +118,7 @@ $(t,n)$ 门限秘密共享方案可能存在恶意分发者/参与者，导致�
 
 ### 2.3 Dec-phase
 
-如果 $\texttt{Ver-algorithm}$ 输出 1，则每个参与者 $p_ i\in P$ 恢复出自己的份额 $S_ i = (Y_ i )^{{x_ i}^{-1}}$。否则，abort。
+如果 $\texttt{Ver-algorithm}$ 输出 1，则每个参与者 $p_ i\in P$ 恢复出自己的份额 $S_ i = (Y_ i )^{x_ i^{-1}}$。否则，abort。
 
 ### 2.4 SR-phase
 
