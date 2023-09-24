@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Homogeneous Liner Recursions
+title:      A non-interactive (t, n)-publicly verifiable multi-secret sharing scheme
 subtitle:   
-date:       2023-09-21
+date:       2023-09-24
 author:     AIX
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
