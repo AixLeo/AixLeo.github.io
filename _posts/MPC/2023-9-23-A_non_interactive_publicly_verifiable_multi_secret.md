@@ -2,7 +2,7 @@
 layout:     post
 title:      A non-interactive (t, n)-publicly verifiable multi-secret sharing scheme
 subtitle:   
-date:       2023-09-24
+date:       2023-09-23
 author:     AIX
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
