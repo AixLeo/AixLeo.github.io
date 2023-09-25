@@ -91,7 +91,7 @@ $(t,n)$ 门限秘密共享方案可能存在恶意分发者/参与者，导致�
 
 ### 2.1 Ini-Phase
 
-1. 分发者 $D$ 选择阶为素数 $q\ (|q|\ge \lambda)$ 的乘法群 $G_ q$，$g,\ g_ 1$ 为两个生成元。
+1. 分发者 $D$ 选择阶为素数 $q\ (\vert q \vert \ge \lambda)$ 的乘法群 $G_ q$，$g,\ g_ 1$ 为两个生成元。
 2. 分发者 $D$ 选择 $\alpha \in _ R \mathbb{Z}_ q$ 。
 3. 每个参与者 $p_ i\in P$ 选择其私钥 $x_ i\in _ R \mathbb{Z}_ q$，发布公钥 $y_ i=(g_ 1)^{x_i}$ 。
 4. 分发者 $D$ 发布系统参数 $SP=(\lambda,\alpha,P,t,l,G_ q,g,g_ 1,H)$ 。其中 $H:\{0,1\}^*\rightarrow\{0,1\}^\lambda$ 是密码学安全的hash函数。
