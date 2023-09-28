@@ -75,7 +75,7 @@ $$
 特殊形式，假设上述辅助方程存在一个 $t$ 重根 $\alpha$，则方程可以表示为 $(x-\alpha)^t=0$，此时，**定理**可以表示为:  
 
 $$
-u_ i=p(i)\alpha^i=(A_ 0+A_ 1i+\cdots +A_ {t-1}i^{t-1}) \tag{1}
+u_ i=p(i)\alpha^i=(A_ 0+A_ 1i+\cdots +A_ {t-1}i^{t-1})\alpha^i \tag{1}
 $$
 
 关于定理的证明，可以参考[[Biggs89]](#Biggs89)
@@ -98,7 +98,7 @@ $$
 当在**式1**两边乘上 $\alpha^{-i}$ 时，可得到：
 
 $$
-u_ i\alpha^{-i}=p(i)=(A_ 0+A_ 1i+\cdots +A_ {t-1}i^{t-1})\alpha^{-i}
+u_ i\alpha^{-i}=p(i)\alpha^i\alpha^{-i}=(A_ 0+A_ 1i+\cdots +A_ {t-1}i^{t-1})
 $$
 
 此时，虽然不知道 $A_ k$的具体值，但 $u_ i\alpha^{-i}$ 即可等同于Shamir方案中的份额 $s_ i$，在恢复阶段，可计算：
