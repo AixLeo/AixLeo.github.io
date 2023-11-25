@@ -71,7 +71,7 @@ MathJax = {
 &emsp;&emsp;在传统的“Share-and-Encrypt”（即先对明文进行秘密分享，再分别对份额进行加密）构造中，因为每一个接收者得到的密文都不同，因此密文总的大小是 $\Theta(n)$。密文随着参与者数量的变化而变化，无疑增加了通信开销，因此，作者定义了几种不同类型的“Compactness”。
 - **Sender-compact**：密文大小与接收者数量无关；
 - **Recipient-compact**：每个接收者在PartDec阶段所需的密文部分大小与接收者数量无关；
-- **Recipient-set-obliviousness**：在PartDec和FinalDec阶段都不使用接收者的公钥 $\lbrace pk_ i\rbrace _ i\in R$；
+- **Recipient-set-obliviousness**：在PartDec和FinalDec阶段都不使用接收者公钥 $\lbrace pk_ i\rbrace _ i\in R$；
 - **Compactness with homomorphism**：评估算法 **Eval** 的输出（即 $c^*$ ）大小与参与者的数量无关。
 
 ## 2. Sender-compact ATE
@@ -89,11 +89,13 @@ MathJax = {
 ![图 2](/assets/res/LOVE_MPC/2023-11-25-14.png)  
 
 &emsp;&emsp;这里简要说明一下，文章主要思想，就是将混淆程序作为发送者的公钥。发送者只是harddcode一个程序，这个程序具有 $f$ 的功能，发送者不具有任何的输入输出；而当接收者拿到公钥（混淆程序）时，输入自己的私有输入，就能得到对应的输出，而程序相对接收者来说是“黑河”，即接收者不知道程序具体的内容，也不知道程序里隐藏的发送者的秘密。
+
 &emsp;&emsp;这里说明一下发送者的公钥——混淆程序中的函数功能 $f_ {k_ w,k_ {Share}, SIG.pk}(\overrightarrow{pv}=\lbrace pv_ i\rbrace _ {i\in R}, \texttt{idx}, sv, \texttt{nonce},\sigma )$。发送者在打包程序时，将PPRF密钥 $k_ w$ ， $k_ {Share}$ 和 $SIG.pk$ 隐藏其中，其中：
 -  $k_ w$ 用于生成秘密值 $w$，此秘密值后续将用于加密明文消息 $m$。
 -  $k_ {Share}$ 用于秘密共享 $w$。
 -  $SIG.pk$ 用于验证颁发给接收者的受限签名。
 -  $f$ 还包含5个输入，分别是接收者公钥集合构成的向量、该接收者公钥在集合中的索引、该接收者的私钥、随机值和发送者颁发的受限签名。
+
 &emsp;&emsp;当接收者输出参数后，程序判定接收者是否是特定集合中的成员，判定通过，则为其生成 $w$ 的份额。
 
 &emsp;&emsp;在完整构造中，Enc阶段，发送者用 $e=w+m$ 来隐藏明文，并对特定集合的接收者公钥发布签名。PartDec阶段，接受收利用发送者的公钥（混淆程序）生成关于 $w$ 的份额。FinalDec阶段，从至少 $t+1$ 个接收者的份额中，重构出 $w$，再恢复出明文 $m$。该方案可以做进一步提升：
@@ -111,6 +113,7 @@ MathJax = {
 
 ### 3.2 Obfuscation-Based HATE
 &emsp;&emsp;OB-HATE方案与前文介绍的ATE方案类似，只不过在发送者的公钥（混淆程序）中，输出结果不再是明文的 $w$，而是经过同态加密方案加密后的关于 $w$ 的密文 $c_ w$。
+
 &emsp;&emsp;而PartDec解密阶段，接收者需要对接收到的密文消息 $c_ e$ 进行同态评估，从而计算 $c_ m=c_ e-c_ w$，进而解密出明文份额，再FinalDec阶段通过重构算法重构出完整明文 $m$。
 
 ## 4. LOVE MPC
