@@ -51,15 +51,15 @@ MathJax = {
 >1. $\texttt{Setup}(1^\lambda, t)\rightarrow (\texttt{params}, msk)$. 生成系统参数和主私钥。
 >2. $\texttt{KeyGen}(\texttt{params}, msk)\rightarrow (pk,sk)$. 生成接收者公私钥对。
 >3. $\texttt{KeyGen}_ {Sndr}(\texttt{params}, msk)\rightarrow (pk_ {Sndr},sk_ {Sndr})$. 生成发送者公私钥对。
->4. $\texttt{Enc}(\texttt{params},sk_ {Sndr},\{pk_ i\}_ {i\in R,\vert R \vert > t},m)\rightarrow c$. 使用发送者私钥和接收者公钥对消息进行加密。
->5. $\texttt{PartDec}(\texttt{params},pk_ {Sndr},\{pk_ i\}_ {i\in R},sk_ j,c)\rightarrow d_ j$. 各参与者对部分密文进行解密，得到对应份额。
->6. $\texttt{FinalDec}(\texttt{params},pk_ {Sndr},\{pk_ i\}_ {i\in R},c,\{d_ i\}_ {i\in R'\subseteq R, \vert R' \vert > t})\rightarrow m$. 根据至少 $t+1$ 个参与者提交的解密份额，恢复出明文 $m$。
+>4. $\texttt{Enc}(\texttt{params},sk_ {Sndr},\lbrace pk_ i\rbrace_ {i\in R,\vert R \vert > t},m)\rightarrow c$. 使用发送者私钥和接收者公钥对消息进行加密。
+>5. $\texttt{PartDec}(\texttt{params},pk_ {Sndr},\lbrace pk_ i\rbrace_ {i\in R},sk_ j,c)\rightarrow d_ j$. 各参与者对部分密文进行解密，得到对应份额。
+>6. $\texttt{FinalDec}(\texttt{params},pk_ {Sndr},\lbrace pk_ i\rbrace_ {i\in R},c,\lbrace d_ i\rbrace_ {i\in R'\subseteq R, \vert R' \vert > t})\rightarrow m$. 根据至少 $t+1$ 个参与者提交的解密份额，恢复出明文 $m$。
 
 <br />
 
 &emsp;&emsp;值得注意的是，上述门限加密基本构造存在弹性，即存在可减少/增加的输入，比如：
 - 在Ad-hoc网络下，ATE方案不需要可信中心，因此不需要使用主密钥 $msk$。
-- 在一些特殊情况下（比如recipient-set-obliviousness方案中），PartDec和FinalDec不需要接收者的公钥 $\{pk_ i\}_ {i\in R}$。
+- 在一些特殊情况下（比如recipient-set-obliviousness方案中），PartDec和FinalDec不需要接收者的公钥 $\lbrace pk_ i\rbrace_ {i\in R}$。
 - 大部分情况下，我们假设门限 $t$ 在全局公共参数 $\texttt{params}$ 内是固定不变的。然而，当需要门限可变时，我们允许发送者在加密时选择 $t$，这称之为“ $t$ -flexible”.
 
 ### 1.2 TE with Homomorphism
@@ -71,7 +71,7 @@ MathJax = {
 &emsp;&emsp;在传统的“Share-and-Encrypt”（即先对明文进行秘密分享，再分别对份额进行加密）构造中，因为每一个接收者得到的密文都不同，因此密文总的大小是 $\Theta(n)$。密文随着参与者数量的变化而变化，无疑增加了通信开销，因此，作者定义了几种不同类型的“Compactness”。
 - **Sender-compact**：密文大小与接收者数量无关；
 - **Recipient-compact**：每个接收者在PartDec阶段所需的密文部分大小与接收者数量无关；
-- **Recipient-set-obliviousness**：在PartDec和FinalDec阶段都不使用接收者的公钥 $\{pk_ i\}_ i\in R$；
+- **Recipient-set-obliviousness**：在PartDec和FinalDec阶段都不使用接收者的公钥 $\lbrace pk_ i\rbrace _ i\in R$；
 - **Compactness with homomorphism**：评估算法 **Eval** 的输出（即 $c^*$ ）大小与参与者的数量无关。
 
 ## 2. Sender-compact ATE
@@ -89,7 +89,7 @@ MathJax = {
 ![图 2](/assets/res/LOVE_MPC/2023-11-25-14.png)  
 
 &emsp;&emsp;这里简要说明一下，文章主要思想，就是将混淆程序作为发送者的公钥。发送者只是harddcode一个程序，这个程序具有 $f$ 的功能，发送者不具有任何的输入输出；而当接收者拿到公钥（混淆程序）时，输入自己的私有输入，就能得到对应的输出，而程序相对接收者来说是“黑河”，即接收者不知道程序具体的内容，也不知道程序里隐藏的发送者的秘密。
-&emsp;&emsp;这里说明一下发送者的公钥——混淆程序中的函数功能 $f_ {k_ w,k_ {Share}, SIG.pk(\overrightarrow{pv}=\{pv_ i\}_ {i\in R}, \texttt{idx}, sv, \texttt{nonce},\sigma )}$。发送者在打包程序时，将PPRF密钥 $k_ w$ ， $k_ {Share}$ 和 $SIG.pk$ 隐藏其中，其中：
+&emsp;&emsp;这里说明一下发送者的公钥——混淆程序中的函数功能 $f_ {k_ w,k_ {Share}, SIG.pk}(\overrightarrow{pv}=\lbrace pv_ i\rbrace _ {i\in R}, \texttt{idx}, sv, \texttt{nonce},\sigma )$。发送者在打包程序时，将PPRF密钥 $k_ w$ ， $k_ {Share}$ 和 $SIG.pk$ 隐藏其中，其中：
 -  $k_ w$ 用于生成秘密值 $w$，此秘密值后续将用于加密明文消息 $m$。
 -  $k_ {Share}$ 用于秘密共享 $w$。
 -  $SIG.pk$ 用于验证颁发给接收者的受限签名。
