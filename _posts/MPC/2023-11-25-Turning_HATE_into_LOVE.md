@@ -102,6 +102,8 @@ MathJax = {
 - $t$-Flexibility: 方案中的门限是固定在发送者公钥中，如果想要门限可变，可以将门限 $t$ 设置在 Enc 阶段的输入中。
 - Reducing the Public Key Size: iO程序的输出是比较大的，因此即使只产生和分发一次，该方案仍具有很大的计算和通信开销，可以使用 differing-inputs obfuscation （diO）[[BGI+01]](#BGI+01)[[ABG+13]](#ABG+13)来减小公钥大小，进一步提高效率。
 
+>说明一下方案为什么是“Sender-Compact”：Sender-Compact是指密文大小与接收者数量无关，方案中的密文 $c$ 包括 随机值 $\texttt{nonce}$，对消息的加密 $e$ 以及受限签名 $\sigma$，而三者都是定长的，因此密文 $c$ 也为定长，与参与者数量无关。
+
 ## 3. HATE
 ### 3.1 Share-and-Encrypt
 &emsp;&emsp;对于传统的“Share-and-Encrypt”方法来说，只要秘密共享方案和加密方案具有相同的同态性质，即可构造成如下图所示的HATE方案，并且该方案具有“Recipient-set-oblivious”和“Recipient-compact”性质。特别的，如果秘密共享方案和加密方案都具有全同态性质，那构造出来的HATE方案也同样是全同态TE方案。

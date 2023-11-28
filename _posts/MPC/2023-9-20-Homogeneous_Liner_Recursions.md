@@ -43,7 +43,7 @@ $$HLR：\left\{\begin{matrix}
 即前 $t-1$ 项是由 $c_ j,\ j\le t-1$ 直接赋值，后面的项由递推公式逐项计算得到。  
 <br />
 
-### 辅助公式的定义
+### 1.1 辅助公式的定义
 由以上齐次线性递推公式的定义，我们可以定义以下辅助方程：
 
 $$
@@ -60,6 +60,87 @@ $$
 
 其中， $m_ 1,m_ 2,\cdots m_ l$ 分别为对应根的重复度（multiplicity），即重根的个数，且 $m_ 1+m_ 2+\cdots +m_ l=t$ 。  
 <br />
+
+### 1.2 辅助公式的推导
+
+我们将HLR定义中的递推式移项后可得：$u_ {i+t}=-a_ 1u_ {i+t-1}-\cdots -a_ tu_ i$.
+因为是线性递推式，因此可以表示为矩阵乘法：
+
+$$
+\begin{bmatrix}
+  u_ {i+t} \\
+  u_ {i+t-1} \\
+  u_ {i+t-2} \\
+  \vdots \\
+  u_ {i+1}
+\end{bmatrix}=
+\begin{bmatrix}
+  a_ 1& a_ 2& \cdots & a_ {t-1}& a_ t \\
+  1 & 0 & \cdots & 0 &0\\
+  0 & 1 & \cdots & 0 &0\\
+  \vdots & \vdots & \ddots & \vdots &\vdots\\
+  0 & 0 & \cdots &1 &0
+\end{bmatrix}\begin{bmatrix}
+  u_ {i+t-1} \\
+  u_ {i+t-2} \\
+  u_ {i+t-3} \\
+  \vdots \\
+  u_ {i}
+\end{bmatrix}
+$$
+
+我们记上式中的 $t\times t$系数矩阵为 $\mathbf{A}$，则对于该矩阵，如果存在数 $\lambda$ 和非零向量 $\vec{v}$，满足：
+
+$$
+\lambda \vec{v}=\mathbf{A}\vec{v}
+$$
+
+那么称 $\lambda$ 为矩阵 $\mathbf{A}$ 的特征值， $\vec{v}$ 为矩阵 $\mathbf{A}$ 的特征向量。移项可得：
+
+$$
+(\lambda \mathbf{I}-\mathbf{A})\vec{v}=0\text{  （其中 }\mathbf{I} \text{ 为单位矩阵）}
+$$
+
+对于某个特定的 $\lambda$，上式存在非零解iff：
+
+$$
+\text{det}(\lambda\mathbf{I}-\mathbf{A})=0\text{ （特征方程）}
+$$
+
+把 $\lambda$ 当成未知量，则 $\text{det}(\lambda\mathbf{I}-\mathbf{A})$ 可以看成是一个关于 $\lambda$ 的多项式，称之为 $\mathbf{A}$ 的**特征多项式**。
+
+求特征多项式：
+
+$$
+\text{det}(\lambda\mathbf{I}-\mathbf{A})=
+\begin{vmatrix}
+  \lambda+a_ 1&a_ 2 &a_ 3 &\cdots  &a_ {t-1} &a_ t \\
+  -1&\lambda &0 &\cdots   &0 &0 \\
+  0&-1  &\lambda  &\cdots  &0 &0\\
+  \vdots&\vdots  &\ddots  &\ddots&\vdots &\vdots \\
+  0&0  &0  & \ddots  &\lambda & 0\\
+  0&0  &0  & \cdots &-1 &\lambda
+\end{vmatrix}
+$$
+
+按第一行展开，设代数余子式为 $\mathbf{B}_ {1,i}$，则：
+
+$$
+\text{det}(\lambda\mathbf{I}-\mathbf{A})=(\lambda+a_ 1)\mathbf{B}_ {1,1}+a_ 2\mathbf{B}_ {1,2}+\cdots +a_ t\mathbf{B}_ {1,t}\ \ \text{ (*)}
+$$
+
+其中 $\mathbf{B}_ {1,i}$ 的行列式可表示为 $(-1)^{i-1}\lambda^{t-i}$，因此：
+
+$$
+\mathbf{B}_ {1,i}=(-1)^{1+i}(-1)^{i-1}\lambda^{t-i}
+$$
+
+带入 （*） 式可得：
+
+$$
+\text{det}(\lambda\mathbf{I}-\mathbf{A})=\lambda^t+\sum_ {i=1}^ta_ i\lambda^{t-i}\text{   （辅助方程）}
+$$
+
 
 ## 2. 定理
 对于 $i\ge 0$，由上述辅助方程，可以得到：
@@ -78,7 +159,7 @@ $$
 u_ i=p(i)\alpha^i=(A_ 0+A_ 1i+\cdots +A_ {t-1}i^{t-1})\alpha^i \tag{1}
 $$
 
-关于定理的证明，可以参考[[Biggs89]](#Biggs89)
+关于定理的证明，可以参考[[Biggs89]](#Biggs89)。这个定理其实就是在求递推式的**通项**，可以用书中的通过**生成式**推导的方法，也可以通过**解微分方程**来求递推式通项。
 <br />
 
 ## 3. 在秘密共享中的用法
