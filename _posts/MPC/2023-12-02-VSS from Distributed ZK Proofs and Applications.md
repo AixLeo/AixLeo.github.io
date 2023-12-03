@@ -58,7 +58,7 @@ MathJax = {
 >- The prover’s task is to convince the (designated) verifiers that the main input $x$ belongs to a specific language $\mathbf{L}$.
 
 ## 2. Post-Quantum Secure NI-TZK Scheme
-&emsp;&emsp;针对Boneh等人研究的可行性结果，文中为 $n$-分布式关系 $R_ 1,\cdots, R_ n$ 构造了一个高效的非交互式TZK证明(Non-Interactive TZK Proof, NI-TZKP)方案，其中 $R_ i=\lbrace (x_ i,f(X))\vert f(i)=x_ i\rbrace$，这里 $f(X)\in \mathbb{Z}_ N[X]_ t$ 是关于 $X 的（最高） $t$ 次多项式，并且其系数定义在环 $\mathbb{Z}_ N$ 上。该方案具备以下性质：
+&emsp;&emsp;针对Boneh等人研究的可行性结果，文中为 $n$-分布式关系 $R_ 1,\cdots, R_ n$ 构造了一个高效的非交互式TZK证明(Non-Interactive TZK Proof, NI-TZKP)方案，其中 $R_ i=\lbrace (x_ i,f(X))\vert f(i)=x_ i\rbrace$，这里 $f(X)\in \mathbb{Z}_ N[X]_ t$ 是关于 $X$ 的（最高） $t$ 次多项式，并且其系数定义在环 $\mathbb{Z}_ N$ 上。该方案具备以下性质：
 
 - NI-TZK建立在诚实大多数的假设前提下；
 - NI-TZK不依赖于任何困难问题假设，并且方案中用到的是量子计算性隐藏的承诺方案，因此具备量子安全；
