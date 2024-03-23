@@ -56,7 +56,7 @@ MathJax = {
 
 
 ### 1.2 DLEQ
-&emsp;&emsp;Chaum和Pedersen[[CP92]](#CP92)在1992年提出了盲化的Diffie-Hellman问题，在文中被称为DLEQ问题。作为方案中的子协议，目的是要证明对于 $q$ 阶群 $G$ 的生成元 $g_ 1,h_ 1,g_ 2,h_ 2$ 而言， $\text{log}_ {g_ 1}h_1=\text{log}_ {g_ 2}h_ 2$。协议详细描述如下：
+&emsp;&emsp;Chaum和Pedersen[[CP92]](#CP92)在1992年提出了盲化的Diffie-Hellman问题，在文中被称为DLEQ问题。作为方案中的子协议，其目的是要证明对于 $q$ 阶群 $G$ 的生成元 $g_ 1,h_ 1,g_ 2,h_ 2$ 而言， $\text{log}_ {g_ 1}h_1=\text{log}_ {g_ 2}h_ 2$。协议详细描述如下：
 > 假设证明者知道 $\alpha$ 满足 $h_ 1=g_ 1^\alpha$ 以及 $h_ 2=g_ 2^\alpha$。
 > - 证明者向验证者发送承诺 $a_ 1=g_ 1^w$ 和 $a_ 2=g_ 2^w$，其中 $w\in_ R\mathbb{Z}_ q$。
 > - 验证者随机选择挑战 $c\in_ R\mathbb{Z}_ q$，并发送给证明者。
