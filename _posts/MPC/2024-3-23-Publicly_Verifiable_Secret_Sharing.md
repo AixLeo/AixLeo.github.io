@@ -10,6 +10,7 @@ tags:
     - PVSS
     - Secret Sharing
     - ElGamal
+    - DDL
 ---
 
 <html>
