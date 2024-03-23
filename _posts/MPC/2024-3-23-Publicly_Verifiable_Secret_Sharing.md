@@ -2,7 +2,7 @@
 layout:     post
 title:      Publicly Verifiable Secret Sharing
 subtitle:   
-date:       2023-3-23
+date:       2024-3-23
 author:     AIX
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
