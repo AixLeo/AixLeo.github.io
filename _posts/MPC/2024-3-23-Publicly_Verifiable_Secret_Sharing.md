@@ -58,9 +58,9 @@ MathJax = {
 
 #### 1.2.1 双指数运算和双离散对数问题
 &emsp;&emsp;假设 $p$ 是大素数，且 $q=(p-1)/2$ 仍然是素数，同时 $h\in \mathbb{Z}_ p^*$ 是 $q$ 阶元素。另外，$g$ 是 $q$ 阶群 $G$ 的生成元，在群 $G$ 上存在离散对数问题。双指数运算是指： 
-$$
-\mathbb{Z}_ q\rightarrow G:x\mapsto g^{h^x}
-$$
+
+$$\mathbb{Z}_ q\rightarrow G:x\mapsto g^{h^x}$$
+
 &emsp;&emsp;双离散对数问题是指给定 $y=g^{h^x}$ 和 $g,h$，计算唯一的 $x\in\mathbb{Z}_ q$ 是困难的。
 
 #### 1.2.2 基于共享离散对数的PVSS

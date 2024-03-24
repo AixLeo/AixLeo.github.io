@@ -72,7 +72,7 @@ MathJax = {
     - 分发者发布系数的承诺值 $C_ j=g^{\alpha_ j},\ 0\le j\le t-1$。
     - 分发者公布用接收者公钥加密的份额 $Y_ i=y_ i^{p(i)},\ 1\le i\le n$。
     - 分发者计算 $X_ i=g^{p(i)}$，同时利用 $\texttt{DLEQ}(g,X_ i,y_ i,Y_ i)$ 生成关于 $Y_ i$ 的证明。
-    > 利用Fiat-Shamir变换，可以计算挑战 $c=H(X_ i\Vert Y_ i\Vert a_ {1i}\Vert a_ {2i}),\ 1\le i\le n$，从而生成非交互式证明。
+    > 利用Fiat-Shamir变换[[FS87]](#FS87)，可以计算挑战 $c=H(X_ i\Vert Y_ i\Vert a_ {1i}\Vert a_ {2i}),\ 1\le i\le n$，从而生成非交互式证明。
   - 份额验证。
     - 验证者通过公开的承诺值 $C_ j$ 计算 $X_ i=\prod\nolimits_ {j=0}^{t-1}C_ j^{i^j}$。
     - 将 $y_ i,X_ i, Y_ i,r_ i$ 和 $c$ 作为输入，验证者计算 $a_ {1i}=g^{r_ i}X_ i^{c}$，以及 $a_ {2i}=y_ i^{r_ i}Y_ i^c$。同时验证 $c\overset{?}{=}H(X_ i\Vert Y_ i\Vert a_ {1i}\Vert a_ {2i})$。
@@ -98,6 +98,10 @@ MathJax = {
 <div id="CP92"></div>
 
 - [CP92] [Chaum, David, and Torben Pryds Pedersen. "Wallet databases with observers." Annual international cryptology conference. Berlin, Heidelberg: Springer Berlin Heidelberg, 1992.](https://link.springer.com/chapter/10.1007/3-540-48071-4_7)
+
+<div id="FS87"></div>
+
+- [FS87] [Fiege, Uriel, Amos Fiat, and Adi Shamir. "Zero knowledge proofs of identity." Proceedings of the nineteenth annual ACM symposium on Theory of computing. 1987.](https://dl.acm.org/doi/abs/10.1145/28395.28419)
 
 
 
