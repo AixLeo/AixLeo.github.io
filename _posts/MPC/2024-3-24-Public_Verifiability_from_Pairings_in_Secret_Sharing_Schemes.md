@@ -115,7 +115,8 @@ $$D_ 1=(g,h,u,T_ 1=\hat{e}(h,h)^s=\hat{e}(g,g)^{\mu^2s})$$
 3. $\mathcal{C}$ 随机选择两个秘密 $x_ 0,x_ 1$，以及随机比特 $b\in\{0,1\}$。然后 $\mathcal{C}$ 针对 $x_ 0$ 运行分发阶段，将得到的份额等输出结果发送给 $\mathcal{A}$，同时发送 $x_ b$；
 4. $\mathcal{C}$ 为所有未被敌手腐败的参与者集合运行重构阶段，并将通过公共信道交换的所有信息发送给 $\mathcal{A}$；
 5. $\mathcal{A}$ 猜测 $b^\prime$。
-&emsp;&emsp;$\mathcal{A}$ 猜测成功的概率为 $\vert \text{Prob}[b^\prime=b]-\frac{1}{2}\vert\le\epsilon$
+
+&emsp;&emsp;$\mathcal{A}$ 猜测成功的概率为 $\vert \text{Prob}[b^\prime=b]-\frac{1}{2}\vert\le\epsilon$。
 
 #### 1.5.2 IND2-Secrets
 &emsp;&emsp;更强的安全性IND-Secrets主要针对敌手的能力不同进行刻画，主要区别在于敌手 $\mathcal{A}$ 可以选择被共享的秘密。
@@ -126,7 +127,8 @@ $$D_ 1=(g,h,u,T_ 1=\hat{e}(h,h)^s=\hat{e}(g,g)^{\mu^2s})$$
 3. $\mathcal{A}$ 随机选择两个秘密 $x_ 0,x_ 1$，并将他们发送给 $\mathcal{C}$。$\mathcal{C}$ 随机选择比特 $b\in\{0,1\}$，然后针对 $x_ b$ 运行分发阶段，并将得到的份额等输出结果发送给 $\mathcal{A}$；
 4. $\mathcal{C}$ 为所有未被敌手腐败的参与者集合运行重构阶段，并将通过公共信道交换的所有信息发送给 $\mathcal{A}$；
 5. $\mathcal{A}$ 猜测 $b^\prime$。
-&emsp;&emsp;$\mathcal{A}$ 猜测成功的概率为 $\vert \text{Prob}[b^\prime=b]-\frac{1}{2}\vert\le\epsilon$
+
+&emsp;&emsp;$\mathcal{A}$ 猜测成功的概率为 $\vert \text{Prob}[b^\prime=b]-\frac{1}{2}\vert\le\epsilon$。
 
 > IND2-Secrets中包含着IND1-Secrets，反之不然。然而，可以通过PVSS方案共享随机会话密钥 $K$ 来将IND1-Secrets方案升级为IND2-Secrets方案。分发者发布 $K\oplus s$，其中 $s$ 为要共享的秘密。这种方案可以称为**混合PVSS方案（Hybrid PVSS Scheme）**。
 
@@ -141,7 +143,7 @@ $$D_ 1=(g,h,u,T_ 1=\hat{e}(h,h)^s=\hat{e}(g,g)^{\mu^2s})$$
 - 对 $t$ 个通过验证的有效份额，$P_ i$ 可以通过拉格朗日插值恢复秘密 $S=\hat{e}(h,h)^{P(0)}$。
 
 ### 1.7 乘法同态性
-&emsp;&emsp;假设两个不同的秘密 $S$ 和 $\tilde{S}$，他们的共享信息分别为 $(C_ 0,\cdots,C_ {t-1},Y_ 1,\cdots,Y_ n)$ 和 $(\tilde{C}_ 0,\cdots,\tilde{C}_ {t-1},\tilde{Y}_ 1,\cdots,\tilde{Y}_ n)$。则对 $\forall\alpha,\beta\in\mathbb{F}_q^*$，$(C_ 0^\alpha\tilde{C}_ 0^\beta,\cdots,C_ {t-1}^\alpha\tilde{C}_ {t-1}^\beta,Y_ 1^\alpha\tilde{Y}_ 1^\beta,\cdots,Y_ n^\alpha\tilde{Y}_ n^\beta)$ 与秘密 $S^\alpha\tilde{S}^\beta$ 具有相同的概率分布。
+&emsp;&emsp;假设两个不同的秘密 $S$ 和 $\tilde{S}$，他们的共享信息分别为 $(C_ 0,\cdots,C_ {t-1},Y_ 1,\cdots,Y_ n)$ 和 $(\tilde{C}_ 0,\cdots,\tilde{C}_ {t-1},\tilde{Y}_ 1,\cdots,\tilde{Y}_ n)$。则对 $\forall\alpha,\beta\in\mathbb{F}_ q^*$，$(C_ 0^\alpha\tilde{C}_ 0^\beta,\cdots,C_ {t-1}^\alpha\tilde{C}_ {t-1}^\beta,Y_ 1^\alpha\tilde{Y}_ 1^\beta,\cdots,Y_ n^\alpha\tilde{Y}_ n^\beta)$ 与秘密 $S^\alpha\tilde{S}^\beta$ 具有相同的概率分布。
 > 因为方案中的运算都是在指数上，因此可以由指数上的加法同态性得到。
 
 
