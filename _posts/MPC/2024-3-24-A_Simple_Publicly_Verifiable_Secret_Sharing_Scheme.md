@@ -82,10 +82,8 @@ MathJax = {
     - 参与者计算 $y_ i=G^\alpha$ 和 $Y_ i=S_ i\alpha$，利用 $\texttt{DLEQ}(G,y_ i,S_ i,Y_ i)$ 生成关于 $S_ i$ 的证明。
   - 交换份额。
     - 参与者交换份额 $S_ i$ 以及相对应的证明。验证通过后，如下利用拉格朗日插值恢复秘密 $G^s$：
-  
-    $$
-    \prod_ {i=1}^tS_ i^{\lambda_ i}=\prod_ {i=1}^t(G^{p(i)})^{\lambda_ i}=G^{\sum_ {i=1}^tp(i)\lambda_ i}=G^{p(0)}=G^s,\qquad \lambda_ i=\prod_{j\ne i}\frac{j}{j-i}
-    $$
+    
+    $$\prod_ {i=1}^tS_ i^{\lambda_ i}=\prod_ {i=1}^t(G^{p(i)})^{\lambda_ i}=G^{\sum_ {i=1}^tp(i)\lambda_ i}=G^{p(0)}=G^s,\qquad \lambda_ i=\prod_{j\ne i}\frac{j}{j-i}$$
 
 
 
