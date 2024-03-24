@@ -44,7 +44,7 @@ MathJax = {
 &emsp;&emsp;Stadler在1996年首次提出了PVSS的概念[[Sta96]](#Sta96)，并基于ElGamal密码体制和Double Discrete Logarithms问题提出了PVSS方案。但是这种DDL假设并不是标准的假设，因此，1999年，Schoenmakers基于标准离散对数假设，提出了新的PVSS方案。同时，相较于Sta96方案[[Sta96]](#Sta96)，进一步明确在重构阶段，参与者除了提交份额之外，还需提交份额相对应的证明。
 
 ### 1.1 Model for NI-PVSS
-&emsp;&emsp;在PVSS方案中，分发者 $D$ 希望在 $n$ 个参与者 $P_ 1,\cdots,P_ n$ 之间分发秘密 $s$ 的份额。对于 $(t,n)$门限访问结构 （$1\le t\le n$），至少 $t$ 个参与者合作才能恢复秘密；除非安全假设不成立，否则任何少于 $t$ 个参与者构成的集合都无法获得关于秘密的任何信息。标准的PVSS方案主要包括以下阶段：
+&emsp;&emsp;在PVSS方案中，分发者 $D$ 希望在 $n$ 个参与者 $P_ 1,\cdots,P_ n$ 之间分发秘密 $s$ 的份额。对于 $(t,n)$门限访问结构 （$1\leq t\leq n$），至少 $t$ 个参与者合作才能恢复秘密；除非安全假设不成立，否则任何少于 $t$ 个参与者构成的集合都无法获得关于秘密的任何信息。标准的PVSS方案主要包括以下阶段：
 - 初始化阶段。生成系统参数，每个参与者生成公私钥对。
 - 分发阶段。分发阶段由以下两个步骤构成：
   - 对份额的分发。分发者生成每个参与者的份额 $s_ i$，利用参与者的公钥对份额进行加密得到并发布 $E_ i(s_ i)$，同时参与者对每个加密份额生成并发布证明 $\texttt{PROOF}_ D$，另外还需发布秘密 $s$ 的承诺值。
@@ -68,13 +68,13 @@ MathJax = {
 - 初始化阶段。生成 $q$ 阶群 $G_ q$ 以及生成元 $g,G$。每位参与者 $P_ i$ 生成公私钥对 $(sk_ i,pk_ i)=(x_ i,y_ i=G^{x_ i})$。
 - 分发阶段。
   - 份额分发。
-    - 分发者生成最多 $t-1$ 次多项式 $p(x)=\sum_ {j=0}^{t-1}\alpha_ jx^j$，其中 $\alpha_ j\in \mathbb{Z}_ q$，并且 $s=\alpha_ 0$。秘密为 $S=G^s$。
+    - 分发者生成最多 $t-1$ 次多项式 $p(x)=\sum\nolimits_ {j=0}^{t-1}\alpha_ jx^j$，其中 $\alpha_ j\in \mathbb{Z}_ q$，并且 $s=\alpha_ 0$。秘密为 $S=G^s$。
     - 分发者发布系数的承诺值 $C_ j=g^{\alpha_ j},\ 0\le j\le t-1$。
     - 分发者公布用接收者公钥加密的份额 $Y_ i=y_ i^{p(i)},\ 1\le i\le n$。
     - 分发者计算 $X_ i=g^{p(i)}$，同时利用 $\texttt{DLEQ}(g,X_ i,y_ i,Y_ i)$ 生成关于 $Y_ i$ 的证明。
     > 利用Fiat-Shamir变换，可以计算挑战 $c=H(X_ i\Vert Y_ i\Vert a_ {1i}\Vert a_ {2i}),\ 1\le i\le n$，从而生成非交互式证明。
   - 份额验证。
-    - 验证者通过公开的承诺值 $C_ j$ 计算 $X_ i=\prod_ {j=0}^{t-1}C_ j^{i^j}$。
+    - 验证者通过公开的承诺值 $C_ j$ 计算 $X_ i=\prod\nolimits_ {j=0}^{t-1}C_ j^{i^j}$。
     - 将 $y_ i,X_ i, Y_ i,r_ i$ 和 $c$ 作为输入，验证者计算 $a_ {1i}=g^{r_ i}X_ i^{c}$，以及 $a_ {2i}=y_ i^{r_ i}Y_ i^c$。同时验证 $c\overset{?}{=}H(X_ i\Vert Y_ i\Vert a_ {1i}\Vert a_ {2i})$。
 - 重构阶段。
   - 份额解密。
@@ -82,6 +82,7 @@ MathJax = {
     - 参与者计算 $y_ i=G^\alpha$ 和 $Y_ i=S_ i\alpha$，利用 $\texttt{DLEQ}(G,y_ i,S_ i,Y_ i)$ 生成关于 $S_ i$ 的证明。
   - 交换份额。
     - 参与者交换份额 $S_ i$ 以及相对应的证明。验证通过后，如下利用拉格朗日插值恢复秘密 $G^s$：
+  
     $$
     \prod_ {i=1}^tS_ i^{\lambda_ i}=\prod_ {i=1}^t(G^{p(i)})^{\lambda_ i}=G^{\sum_ {i=1}^tp(i)\lambda_ i}=G^{p(0)}=G^s,\qquad \lambda_ i=\prod_{j\ne i}\frac{j}{j-i}
     $$
